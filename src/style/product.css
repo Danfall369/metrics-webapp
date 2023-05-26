@@ -1,0 +1,78 @@
+body {
+  background-color: #4167af;
+}
+
+.Loading {
+  margin: 0 auto;
+}
+
+.catsearchBarCont {
+  display: flex;
+  justify-content: center;
+}
+
+.catsearchBar {
+  width: 95%;
+  height: 2.5rem;
+  border-radius: 5px;
+  margin: 0.5rem auto;
+}
+
+.listCont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+
+.menIcon {
+  width: 6rem;
+  height: 10rem;
+}
+
+.womenIcon {
+  width: 6rem;
+  height: 10rem;
+}
+
+.jewelryIcon {
+  width: 6rem;
+  height: 10rem;
+}
+
+.elecIcon {
+  width: 6rem;
+  height: 10rem;
+}
+
+.categoryCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #4167af;
+  width: 100%;
+  height: 20.5rem;
+  border: none;
+  text-transform: capitalize;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryCont-jewelery {
+  background-color: #3d60a2;
+}
+
+.categoryCont-electronics {
+  background-color: #3d60a2;
+}
+
+.productImg {
+  width: 10rem;
+}

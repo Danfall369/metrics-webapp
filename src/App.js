@@ -5,6 +5,7 @@ import './App.css';
 import Products from './components/routes/Products';
 import Header from './components/routes/Header';
 import Details from './components/routes/Details';
+import Category from './components/routes/Category';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" Component={Products} />
+        <Route path="Category/:category" Component={Category} />
         <Route path="Details/:id" Component={Details} />
       </Routes>
     </Router>

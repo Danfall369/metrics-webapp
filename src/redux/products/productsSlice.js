@@ -13,8 +13,18 @@ export const getProducts = createAsyncThunk('products/getProducts', async () => 
   }
 });
 
+// Products Categorys
+export const getCategory = createAsyncThunk('category/getCategory', async (category) => {
+  try {
+    const response = await axios.get(`https://fakestoreapi.com/products/category/${category}`);
+    return response.data;
+  } catch (error) {
+    throw new Error('Failed to fetch product details.');
+  }
+});
+
 // Products Details
-export const getDetails = createAsyncThunk('products/getDetails', async (id) => {
+export const getDetails = createAsyncThunk('details/getDetails', async (id) => {
   try {
     const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
     return response.data;
@@ -26,6 +36,7 @@ export const getDetails = createAsyncThunk('products/getDetails', async (id) => 
 const initialState = {
   products: [],
   details: null,
+  category: [], // Initialize category as an empty array
   loading: false,
 };
 
@@ -38,6 +49,13 @@ const productsSlice = createSlice({
       return {
         ...state,
         details: selectedItem,
+      };
+    },
+    addCategory: (state, action) => {
+      const selectedItem = action.payload;
+      return {
+        ...state,
+        categorys: selectedItem,
       };
     },
   },
@@ -62,10 +80,20 @@ const productsSlice = createSlice({
       })
       .addCase(getDetails.rejected, (state) => {
         state.loading = false;
+      })
+      .addCase(getCategory.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getCategory.fulfilled, (state, action) => {
+        state.loading = false;
+        state.category = action.payload;
+      })
+      .addCase(getCategory.rejected, (state) => {
+        state.loading = false;
       });
   },
 });
 
-export const { addDetails } = productsSlice.actions;
+export const { addDetails, addCategory } = productsSlice.actions;
 
 export default productsSlice.reducer;
