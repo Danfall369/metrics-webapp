@@ -10,16 +10,19 @@
 
 .headerTitle {
   font-size: 1.5rem;
+  color: white;
 }
 
 .headerIcon {
   margin-left: 10px;
   width: 1.2rem;
   height: 3rem;
+  color: white;
 }
 
 .backButton {
   background: none;
   border: none;
   font-size: 1.5rem;
+  color: white;
 }

@@ -56,6 +56,7 @@
 
 - You can see a live Demo of this proyect <a href="https://dfall-store.netlify.app/" >HERE</a>
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -164,6 +165,6 @@ I would like to thanks to <a href="https://www.behance.net/sakwadesignstudio">Ne
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./Readme/LICENSE) licensed.
+This project is [MIT](./Readme/LICENSE.txt) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

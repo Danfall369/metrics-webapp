@@ -45,7 +45,7 @@ function Products() {
   };
 
   if (loading) {
-    return <h2 className="Loading">Loading...</h2>;
+    return <h2>Loading...</h2>;
   }
 
   const uniqueCategories = Array.from(new Set(filteredProducts.map((item) => item.category)));

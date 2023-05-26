@@ -22,10 +22,9 @@ function Details() {
       <ul>
         {details && (
           <li className="detailCont" key={details.id}>
+            <h5 className="detailsTitle">{details.title}</h5>
             <img src={details.image} alt="productImg" className="detailImg" />
             <div className="detailsInfo">
-              <h5 className="detailsTitle">{details.title}</h5>
-              <br />
               <p className="detailstext">{details.description}</p>
               <br />
               <p className="detailsPrice">

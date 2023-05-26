@@ -6,6 +6,12 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+p,
+h2,
+h5 {
+  color: white;
+}
+
 .App {
   text-align: center;
 }

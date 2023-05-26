@@ -51,7 +51,7 @@ function Category() {
               <div className="catInfo">
                 <h5 className="cartTitle">{item.title}</h5>
                 <br />
-                <p>
+                <p className="catPrice">
                   <strong>
                     {item.price}
                     $

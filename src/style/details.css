@@ -3,8 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  padding: 1rem;
   margin: 3rem auto;
   gap: 2rem;
+  border: 2px solid black;
+  background-color: #5f7adb;
 }
 
 .detailImg {
@@ -21,8 +25,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
   padding: 1rem;
   width: 90%;
-  background-color: lightgray;
 }
