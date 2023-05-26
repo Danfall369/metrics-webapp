@@ -6,6 +6,18 @@ body {
   margin: 0 auto;
 }
 
+.catsearchBarCont {
+  display: flex;
+  justify-content: center;
+}
+
+.catsearchBar {
+  width: 95%;
+  height: 2.5rem;
+  border-radius: 5px;
+  margin: 0.5rem auto;
+}
+
 .listCont {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -38,7 +50,7 @@ body {
   flex-direction: column;
   background-color: #4167af;
   width: 100%;
-  height: 22rem;
+  height: 20.5rem;
   border: none;
   text-transform: capitalize;
 }
