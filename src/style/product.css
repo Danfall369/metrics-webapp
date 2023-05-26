@@ -6,15 +6,6 @@ body {
   margin: 0 auto;
 }
 
-.searchBarCont {
-  display: flex;
-  gap: 2.5rem;
-}
-
-.searchBar {
-  width: 13rem;
-}
-
 .listCont {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -47,7 +38,7 @@ body {
   flex-direction: column;
   background-color: #4167af;
   width: 100%;
-  height: 21.5rem;
+  height: 22rem;
   border: none;
   text-transform: capitalize;
 }
