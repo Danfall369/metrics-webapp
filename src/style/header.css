@@ -1,0 +1,12 @@
+.header {
+  background-color: #ec4c8b;
+  display: flex;
+  justify-content: space-around;
+  gap: 30rem;
+  align-items: center;
+  height: 3rem;
+}
+
+.infoCont {
+  display: flex;
+}
