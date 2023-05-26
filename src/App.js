@@ -1,23 +1,20 @@
+import {
+  BrowserRouter as Router, Routes, Route,
+} from 'react-router-dom';
 import './App.css';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import Header from './components/Header';
-import { addProduct } from './redux/products/productsSlice';
+import Products from './components/routes/Products';
+import Header from './components/routes/Header';
+import Details from './components/routes/Details';
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products/1')
-      .then((response) => response.json())
-      .then((data) => dispatch(addProduct(data)))
-      .catch((error) => console.log(error));
-  }, []);
-
   return (
-    <div className="App">
+    <Router>
       <Header />
-    </div>
+      <Routes>
+        <Route path="/" Component={Products} />
+        <Route path="Details/:id" Component={Details} />
+      </Routes>
+    </Router>
   );
 }
 
