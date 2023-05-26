@@ -22,22 +22,25 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
 }
 
 .menIcon {
   width: 6rem;
   height: 10rem;
 }
+
 .womenIcon {
   width: 6rem;
   height: 10rem;
 }
+
 .jewelryIcon {
   width: 6rem;
   height: 10rem;
 }
+
 .elecIcon {
   width: 6rem;
   height: 10rem;
