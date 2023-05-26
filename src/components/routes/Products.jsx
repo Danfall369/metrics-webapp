@@ -1,72 +1,66 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Card, Button } from 'react-bootstrap';
-import { getProducts, addDetails } from '../../redux/products/productsSlice';
+import { GrUser, GrUserFemale } from 'react-icons/gr';
+import { GiBigDiamondRing } from 'react-icons/gi';
+import { HiOutlineDesktopComputer } from 'react-icons/hi';
+import { getProducts, addCategory } from '../../redux/products/productsSlice';
+import '../../style/product.css';
 
-function Header() {
+function Products() {
   const { products, loading } = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  const filterProducts = useCallback(() => {
-    const filtered = products.filter((item) => {
-      const titleMatch = item.title.toLowerCase().includes(searchQuery.toLowerCase());
-      const priceMatch = item.price.toString().includes(searchQuery);
-      const categoryMatch = item.category.toLowerCase().includes(searchQuery.toLowerCase());
+  const categoryIcons = {
+    "men's clothing": <GrUser className="menIcon" />,
+    "women's clothing": <GrUserFemale className="womenIcon" />,
+    jewelery: <GiBigDiamondRing className="jewelryIcon" />,
+    electronics: <HiOutlineDesktopComputer className="elecIcon" />,
+  };
 
-      return titleMatch || priceMatch || categoryMatch;
-    });
-
-    setFilteredProducts(filtered);
-  }, [products, searchQuery]);
-
-  useEffect(() => {
-    filterProducts();
-  }, [filterProducts]);
-
-  const onHandleClick = (id) => {
-    dispatch(addDetails(id));
-    navigate(`/Details/${id}`);
+  const onHandleClick = (category) => {
+    dispatch(addCategory(category));
+    navigate(`/Category/${category}`);
   };
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <h2 className="Loading">Loading...</h2>;
   }
+
+  const uniqueCategories = Array.from(new Set(products.map((item) => item.category)));
+
+  const getCategoryCount = (category) => products
+    .filter((item) => item.category === category).length;
 
   return (
     <header>
-      <input
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search..."
-      />
-      <ul>
-        {filteredProducts.map((item) => (
-          <li key={item.id}>
-            <Card style={{ width: '18rem' }}>
-              <Card.Body>
-                <Button variant="primary" onClick={() => onHandleClick(item.id)}>Details</Button>
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Img variant="top" src={item.image} alt="productImg" className="IMG" />
-                <Card.Title>
-                  {item.price}
-                  $
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </li>
-        ))}
+      <ul className="listCont">
+        {uniqueCategories.map((category) => {
+          const item = products.find((item) => item.category === category);
+          return (
+            <li className="category" key={item.id}>
+              <button className={`categoryCont categoryCont-${category}`} type="button" onClick={() => onHandleClick(item.category)}>
+                {categoryIcons[category] || null}
+                <div className="cardInfo">
+                  <h5 className="card-title">{category}</h5>
+                  <p>
+                    (
+                    {getCategoryCount(category)}
+                    )
+                  </p>
+                </div>
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </header>
   );
 }
 
-export default Header;
+export default Products;

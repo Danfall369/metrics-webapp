@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Card, Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import { getDetails } from '../../redux/products/productsSlice';
 import '../../style/details.css';
 
 function Details() {
   const { details, loading } = useSelector((state) => state.products);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -19,29 +17,23 @@ function Details() {
     return <h2>Loading...</h2>;
   }
 
-  const onNavigateBack = () => {
-    navigate(-1);
-  };
-
   return (
     <>
       <ul>
-        <li>
-          <Button variant="primary" onClick={onNavigateBack}>Back</Button>
-        </li>
-        {details ? (
-          <li key={details.id}>
-            <Card style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title>{details.title}</Card.Title>
-                <Card.Img variant="top" src={details.image} alt="productImg" className="IMG" />
-                <Card.Text>{details.description}</Card.Text>
-                <Card.Text>{details.price}</Card.Text>
-              </Card.Body>
-            </Card>
+        {details && (
+          <li className="detailCont" key={details.id}>
+            <img src={details.image} alt="productImg" className="detailImg" />
+            <div className="detailsInfo">
+              <h5 className="detailsTitle">{details.title}</h5>
+              <br />
+              <p className="detailstext">{details.description}</p>
+              <br />
+              <p className="detailsPrice">
+                {details.price}
+                $
+              </p>
+            </div>
           </li>
-        ) : (
-          <li>No details found.</li>
         )}
       </ul>
     </>

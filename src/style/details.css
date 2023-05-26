@@ -1,3 +1,28 @@
-.IMG {
-  width: 20rem;
+.detailCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  gap: 2rem;
+}
+
+.detailImg {
+  width: 15rem;
+  height: 16rem;
+  border-radius: 20px;
+  object-fit: fill;
+  border: 5px solid white;
+  margin: 3px;
+}
+
+.detailsInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 1rem;
+  width: 90%;
+  background-color: lightgray;
 }
