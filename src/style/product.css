@@ -1,7 +1,3 @@
-body {
-  background-color: #4167af;
-}
-
 .loading {
   margin: 0 auto;
 }
@@ -21,9 +17,7 @@ body {
 .listCont {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0;
-  grid-row-gap: 0;
+  grid-gap: 0;
 }
 
 .productsIcon {
@@ -51,14 +45,12 @@ body {
   align-items: center;
 }
 
-.categoryCont-jewelery {
-  background-color: #3d60a2;
-}
-
+.categoryCont-jewelery,
 .categoryCont-electronics {
   background-color: #3d60a2;
 }
 
 .productImg {
   width: 10rem;
+  height: auto; /* Maintain aspect ratio */
 }

@@ -12,6 +12,10 @@ h5 {
   color: white;
 }
 
+body {
+  background-color: #4167af;
+}
+
 .App {
   text-align: center;
 }
