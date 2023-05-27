@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { GrUser, GrUserFemale } from 'react-icons/gr';
+import { SlUserFemale, SlUser } from 'react-icons/sl';
 import { GiBigDiamondRing } from 'react-icons/gi';
 import { HiOutlineDesktopComputer } from 'react-icons/hi';
 import { getProducts, addCategory } from '../../redux/products/productsSlice';
@@ -13,7 +13,7 @@ function Products() {
   const navigate = useNavigate();
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
     dispatch(getProducts());
@@ -24,10 +24,10 @@ function Products() {
   }, [products]);
 
   const categoryIcons = {
-    "men's clothing": <GrUser className="menIcon" />,
-    "women's clothing": <GrUserFemale className="womenIcon" />,
-    jewelery: <GiBigDiamondRing className="jewelryIcon" />,
-    electronics: <HiOutlineDesktopComputer className="elecIcon" />,
+    "men's clothing": <SlUser className="productsIcon" />,
+    "women's clothing": <SlUserFemale className="productsIcon" />,
+    jewelery: <GiBigDiamondRing className="productsIcon" />,
+    electronics: <HiOutlineDesktopComputer className="productsIcon" />,
   };
 
   const onHandleClick = (category) => {
@@ -39,8 +39,7 @@ function Products() {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
 
-    const filtered = products.filter((product) => product.category
-      .toLowerCase().includes(query));
+    const filtered = products.filter((product) => product.category.toLowerCase().includes(query));
     setFilteredProducts(filtered);
   };
 
@@ -48,7 +47,7 @@ function Products() {
     return <h2>Loading...</h2>;
   }
 
-  const uniqueCategories = Array.from(new Set(filteredProducts.map((item) => item.category)));
+  const uniqueCategories = [...new Set(filteredProducts.map((item) => item.category))];
 
   const getCategoryCount = (category) => filteredProducts
     .filter((item) => item.category === category).length;

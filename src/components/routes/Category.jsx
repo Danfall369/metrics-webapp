@@ -44,25 +44,30 @@ function Category() {
       </div>
 
       <ul className="catList">
-        {filteredCategory.map((item) => (
-          <li key={item.id}>
-            <button className={`elementsCat elementsCat-${item.id}`} type="button" onClick={() => onHandleClick(item.id)}>
-              <img src={item.image} alt="itemIMG" className="catImg" />
-              <div className="catInfo">
-                <h5 className="cartTitle">{item.title}</h5>
-                <br />
-                <p className="catPrice">
-                  <strong>
-                    {item.price}
-                    $
-                  </strong>
-                </p>
-                <br />
-                <p><b>More Details</b></p>
-              </div>
-            </button>
-          </li>
-        ))}
+        {filteredCategory.map((item) => {
+          const {
+            id, image, title, price,
+          } = item;
+          return (
+            <li key={id}>
+              <button className={`elementsCat elementsCat-${id}`} type="button" onClick={() => onHandleClick(id)}>
+                <img src={image} alt="itemIMG" className="catImg" />
+                <div className="catInfo">
+                  <h5 className="cartTitle">{title}</h5>
+                  <br />
+                  <p className="catPrice">
+                    <strong>
+                      {price}
+                      $
+                    </strong>
+                  </p>
+                  <br />
+                  <p><b>More Details</b></p>
+                </div>
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </>
   );

@@ -26,24 +26,10 @@ body {
   grid-row-gap: 0;
 }
 
-.menIcon {
+.productsIcon {
   width: 6rem;
   height: 10rem;
-}
-
-.womenIcon {
-  width: 6rem;
-  height: 10rem;
-}
-
-.jewelryIcon {
-  width: 6rem;
-  height: 10rem;
-}
-
-.elecIcon {
-  width: 6rem;
-  height: 10rem;
+  color: white;
 }
 
 .categoryCont {

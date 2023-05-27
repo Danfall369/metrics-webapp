@@ -18,24 +18,22 @@ function Details() {
   }
 
   return (
-    <>
-      <ul>
-        {details && (
-          <li className="detailCont" key={details.id}>
-            <h5 className="detailsTitle">{details.title}</h5>
-            <img src={details.image} alt="productImg" className="detailImg" />
-            <div className="detailsInfo">
-              <p className="detailstext">{details.description}</p>
-              <br />
-              <p className="detailsPrice">
-                {details.price}
-                $
-              </p>
-            </div>
-          </li>
-        )}
-      </ul>
-    </>
+    <ul>
+      {details && (
+        <li className="detailCont" key={details.id}>
+          <h5 className="detailsTitle">{details.title}</h5>
+          <img src={details.image} alt="productImg" className="detailImg" />
+          <div className="detailsInfo">
+            <p className="detailstext">{details.description}</p>
+            <br />
+            <p className="detailsPrice">
+              {details.price}
+              $
+            </p>
+          </div>
+        </li>
+      )}
+    </ul>
   );
 }
 
