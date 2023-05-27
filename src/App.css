@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+p,
+h2,
+h5 {
+  color: white;
+}
+
+body {
+  background-color: #4167af;
+}
+
+.App {
+  text-align: center;
+}

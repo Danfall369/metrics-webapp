@@ -1,0 +1,30 @@
+.detailCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  padding: 1rem;
+  margin: 3rem auto;
+  gap: 2rem;
+  border: 2px solid black;
+  background-color: #5f7adb;
+}
+
+.detailImg {
+  width: 15rem;
+  height: 16rem;
+  border-radius: 20px;
+  object-fit: fill;
+  border: 5px solid white;
+  margin: 3px;
+}
+
+.detailsInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 90%;
+}

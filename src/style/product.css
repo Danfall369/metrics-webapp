@@ -1,0 +1,56 @@
+.loading {
+  margin: 0 auto;
+}
+
+.catsearchBarCont {
+  display: flex;
+  justify-content: center;
+}
+
+.catsearchBar {
+  width: 95%;
+  height: 2.5rem;
+  border-radius: 5px;
+  margin: 0.5rem auto;
+}
+
+.listCont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0;
+}
+
+.productsIcon {
+  width: 6rem;
+  height: 10rem;
+  color: white;
+}
+
+.categoryCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #4167af;
+  width: 100%;
+  height: 20.5rem;
+  border: none;
+  text-transform: capitalize;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryCont-jewelery,
+.categoryCont-electronics {
+  background-color: #3d60a2;
+}
+
+.productImg {
+  width: 10rem;
+  height: auto; /* Maintain aspect ratio */
+}

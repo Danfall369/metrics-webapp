@@ -1,0 +1,29 @@
+.header {
+  background-color: #4369b2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 3rem;
+  width: 100%;
+}
+
+.headerTitle {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.headerIcon {
+  margin-left: 10px;
+  width: 1.2rem;
+  height: 3rem;
+  color: white;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
